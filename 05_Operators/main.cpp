@@ -6,15 +6,44 @@
 //
 
 #include <iostream>
+#include <compare>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Long double>double>float>unsigned long>long>unsigned int>int
-    Short and char types are always converted to int
+    //long double>double>float>unsigned long>long>unsigned int>int
+    //short and char types are always converted to int
 
-    Double average = static_cast<double>(100)/3;
+    double average = static_cast<double>(100)/3;
 
-    Int num1(), num2(), num3();
+    int num1(), num2(), num3();
+    
+    cout<<boolalpha; //true or false response
+    cout<<(1==1)<<endl;
+    
+    cout<<noboolalpha; // 0 or 1 response
+    cout<<(1==1)<<endl;
+    
+//    Only used in C++20
+//    cout<<("1" <=> "1")<<endl;
+//    cout<<(2 <=> 1)<<endl;
+//    cout<<(1 <=> 2)<<endl;
+    
+    
+    //Compound Operators
+/*
+     +=
+     -=
+     *=
+     /+
+     %=
+     >>=
+     <<=
+     &=
+     ^=
+     |=
+*/
+    
+    
     
     
     
