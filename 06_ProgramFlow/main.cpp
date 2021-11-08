@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -21,6 +22,40 @@ int main(int argc, const char * argv[]) {
         case blue:cout<<"blue"<<endl;break;
         default:cout<<"NONE"<<endl;break;
     }
+    
+    cout<< ((1==1) ? "true":"false")<<endl;
+    
+    
+    for(int i{0}; i<6;i++){
+        cout<<i<<endl;
+    }
+    
+    for(int i{0},j{1};i<3;i++,j++){
+        cout<<i<<" "<<j<<endl;
+    }
+    
+    
+    
+    vector<int> nums {10,20,30,40,50};
+    for(unsigned i{0};i<nums.size();i++){//unsigned or int
+        cout<<nums[i]<<" A "<<endl;
+    }
+    
+    for(auto i:nums){ //can deduce type by using auto
+        cout<<i<<" B"<<endl;
+    }
+    
+    for(auto temp:{1,2,3}){ //initialize and use array
+        cout<<temp<<"C"<<endl;
+    }
+    for(auto c:"David"){//iterate over a string
+        cout<<c<<endl;
+    }
+    
+    
+    
+    
+    
     
     return 0;
 }
