@@ -53,11 +53,24 @@ int main(int argc, const char * argv[]) {
         cout<<c<<endl;
     }
     
-    //set and remove precision
-    double round {5.87};
-    cout<<round<<setprecision(2)<<" -> "<<round<<setprecision(-1)<<" -> "<<round<<endl;
+    //set and remove precision, total number length, not just decimals
+    double round {15.875};
+    cout<<round<<setprecision(3)<<" -> "<<round<<setprecision(2)<<" -> "<<round<<setprecision(-1)<<" -> "<<round<<endl;
 
     
+    //2d array
+    vector<vector<int>> vec2d
+    {
+        {1,2,3},
+        {10,20,30,40},
+        {100,200,300,400,500}
+    };
+    for(auto vec:vec2d){
+        for(auto val: vec){
+            cout<<val<<" ";
+        }
+        cout<<endl;
+    }
     
     return 0;
 }
