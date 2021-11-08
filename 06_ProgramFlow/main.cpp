@@ -53,11 +53,11 @@ int main(int argc, const char * argv[]) {
         cout<<c<<endl;
     }
     
+    //set and remove precision
     double round {5.87};
-    cout<<round<<setprecision(2);
-    cout<<" -> "<<round<<endl;
+    cout<<round<<setprecision(2)<<" -> "<<round<<setprecision(-1)<<" -> "<<round<<endl;
 
-    //Test
+    
     
     return 0;
 }
