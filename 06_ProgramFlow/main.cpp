@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -52,10 +53,11 @@ int main(int argc, const char * argv[]) {
         cout<<c<<endl;
     }
     
-    
-    
-    
-    
+    double round {5.87};
+    cout<<round<<setprecision(2);
+    cout<<" -> "<<round<<endl;
+
+    //Test
     
     return 0;
 }
