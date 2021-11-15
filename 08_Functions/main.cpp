@@ -56,6 +56,12 @@ void staticVar(int x){
 }
 
 
+unsigned long long factorial(unsigned long long n){
+    if (n==0)
+        return 1;
+    return n*factorial(n-1);
+}
+
 int main(int argc, const char * argv[]) {
 
     srand(time(nullptr));
@@ -100,6 +106,9 @@ int main(int argc, const char * argv[]) {
     staticVar(25);
     
     
+    
+    //recursion
+    cout<<"Factorial: "<<factorial(20)<<endl;
     
     return 0;
 }
