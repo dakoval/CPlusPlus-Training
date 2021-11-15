@@ -9,6 +9,7 @@
 #include <cctype> //Basic char functions
 #include <cstdlib> //Converts strings into numbers
 #include <cstring> //basic string functions
+#include <string> //string functions
 
 using namespace std;
 
@@ -43,6 +44,28 @@ int main(int argc, const char * argv[]) {
         }
     }
     cout<<name<<endl;
+    
+    
+    
+    //C++ strings
+    string s1; //empty
+    string s2 {"David"};
+    string s3 {s2};
+    string s4 {"David",3}; // Dav
+    string s5 {s3,0,2}; // Da
+    string s6 (3,'X'); //xxx   - uses () not curly
+    cout<<s6<<endl;
+    
+    string s7 = s2.substr(0,2);
+    cout<<s7<<endl;
+    cout<<s2.find("a")<<endl;
+    cout<<s2.find("a",1)<<endl; //starting index
+    
+    //getline(cin,s1); //reads the entire line, not just word
+    //getline(cin,s1,'x'); //where to stop reading the line at character
+    
+    
+    
     
     return 0;
 }
