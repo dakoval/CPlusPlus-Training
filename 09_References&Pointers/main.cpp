@@ -104,6 +104,8 @@ int main(int argc, const char * argv[]) {
     
     //create array with default values
     int *my_array = create_array(5,20);
+    delete [] my_array;
+    
     
     
     
