@@ -13,6 +13,15 @@ using namespace std;
 int *int_ptr{nullptr}; //nullptr is the same as 0
 
 
+int *create_array(size_t size, int init_value = 0){
+    int *new_storage {nullptr};
+    new_storage = new int[size];
+    for(size_t i{0}; i<size;i++){
+        *(new_storage+1)=init_value;
+    }
+    return new_storage;
+}
+
 int main(int argc, const char * argv[]) {
     
     int num{10};
@@ -91,6 +100,11 @@ int main(int argc, const char * argv[]) {
     const int *const prt3 {&aa};
     //*prt3 = 5 ERROR
     //prt3 = &bb ERROR
+    
+    
+    //create array with default values
+    int *my_array = create_array(5,20);
+    
     
     
     return 0;
