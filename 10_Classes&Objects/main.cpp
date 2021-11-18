@@ -7,8 +7,25 @@
 
 #include <iostream>
 
+class Player{
+  //attributes
+    string name;
+    int health;
+    int xp;
+    
+    
+    //methods
+    void talk(string);
+    bool is_dead();
+    
+};
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    
+    
+    
+    
+    
+    
     return 0;
 }
