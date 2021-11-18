@@ -9,6 +9,7 @@
 
 class Player{
   //attributes
+public:
     string name;
     int health;
     int xp;
@@ -20,7 +21,14 @@ class Player{
     
 };
 int main(int argc, const char * argv[]) {
+    Player a;
+    Player b;
     
+    Player *c {nullptr};
+    c=new Player;
+    c->health = 100; //pointer to field in object
+    (*c).health = 100;
+    delete c;
     
     
     
