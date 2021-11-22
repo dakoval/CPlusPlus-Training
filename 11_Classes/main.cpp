@@ -6,9 +6,19 @@
 //
 
 #include <iostream>
+#include <string>
+#include "Account.hpp"
+
+using namespace std;
+
+
+
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Account frank_account;
+    frank_account.set_name("Frank");
+    frank_account.set_balance(1000.0);
+
     return 0;
 }
