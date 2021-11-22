@@ -56,10 +56,17 @@ public:
     }
     */
     
-    //Evn Better way of overloading constructors using initialization lists using delagating constructors
+    
+    /*
+    //Even Better way of overloading constructors using initialization lists using delagating constructors
     Account():Account{"None",0.0}{}
     Account(std::string s):Account{s,0.0}{}
     Account(std::string s, double bal):name{s},balance{bal}{}
+    */
+    
+    //Most efficient
+    Account(std::string s="None", double bal=0.0):name{s},balance{bal}{}
+    
     //~Account(); // destructor
 };
 
