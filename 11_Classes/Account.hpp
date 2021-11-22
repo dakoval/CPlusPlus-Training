@@ -24,6 +24,8 @@ public:
     bool deposit(double amount);
     bool withdraw(double amount);
     
+    
+    /*
     //Overloaded Constructors
     Account(){ //if no constructor provided, there will be a default one
         name="None";
@@ -37,9 +39,23 @@ public:
         name =s;
         balance = bal;
     }
+    */
     
     
-    ~Account(); // destructor
+    
+    //Better way of overloading constructors using initialization lists
+    Account()
+        :name{"None"},balance{0.0}{
+    }
+
+    Account(std::string s)
+        :name{s},balance{0.0}{
+    }
+    Account(std::string s, double bal)
+        :name{s},balance{bal}{
+    }
+    
+    //~Account(); // destructor
 };
 
 #endif /* Account_h */
