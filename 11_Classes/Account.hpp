@@ -42,7 +42,7 @@ public:
     */
     
     
-    
+    /*
     //Better way of overloading constructors using initialization lists
     Account()
         :name{"None"},balance{0.0}{
@@ -54,7 +54,12 @@ public:
     Account(std::string s, double bal)
         :name{s},balance{bal}{
     }
+    */
     
+    //Evn Better way of overloading constructors using initialization lists using delagating constructors
+    Account():Account{"None",0.0}{}
+    Account(std::string s):Account{s,0.0}{}
+    Account(std::string s, double bal):name{s},balance{bal}{}
     //~Account(); // destructor
 };
 
