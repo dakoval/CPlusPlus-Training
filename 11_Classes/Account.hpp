@@ -24,7 +24,8 @@ public:
     bool deposit(double amount);
     bool withdraw(double amount);
     
-    Account(){
+    //Overloaded Constructors
+    Account(){ //if no constructor provided, there will be a default one
         name="None";
         balance = 0.0;
     }
