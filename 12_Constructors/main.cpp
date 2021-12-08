@@ -16,12 +16,13 @@ private:
     
 public:
     void talk(std::string);
-    bool is_dead();
+    bool is_dead(int);
     
     Player(std::string name_val="None",int health_val=0,int xp_val=0);
     Player(const Player &p);
     
-    ~Player(); //descructor
+
+    ~Player(){}; //desctructor
 };
 
 Player::Player(std::string name_val,int health_val,int xp_val)
@@ -29,9 +30,19 @@ Player::Player(std::string name_val,int health_val,int xp_val)
     }
 
 //Copying constructor
+/*
 Player::Player(const Player &source)
     :name{source.name},health{source.health},xp{source.xp}{
+}*/
+Player::Player(const Player &source) //delagating to use above constructor
+    :Player{source.name,source.health,source.xp}{
 }
+
+bool Player::is_dead(int xp){
+    if(this->xp ==xp) return false;
+    else return true;
+}
+
 
 int main(int argc, const char * argv[]) {
     Player p{"test"};
