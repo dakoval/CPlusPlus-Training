@@ -118,5 +118,32 @@ const char *Mystring::get_str()const {return str;}
 
 
 
+//EqualityV2
+bool operator==(const Mystring &lhs, const Mystring &rhs){
+    return (std::strcmp(lhs.str,rhs.str)==0);
+}
+
+//Make LowercaseV2
+Mystring operator-(const Mystring &obj){
+    char *buff = new char[std::strlen(obj.str)+1];
+    std::strcpy(buff,obj.str);
+    for(size_t i=0;i<std::strlen(buff);i++){
+        buff[i] = std::tolower(buff[i]);
+    }
+    Mystring temp{buff};
+    delete [] buff;
+    return temp;
+}
+
+//ConcatenateV2
+Mystring operator+(const Mystring &lhs, const Mystring &rhs){
+    char *buff = new char[std::strlen(lhs.str)+std::strlen(rhs.str)+1];
+    std::strcpy(buff,lhs.str);
+    std::strcat(buff,rhs.str);
+    Mystring temp{buff};
+    delete [] buff;
+    return temp;
+}
+
 
 

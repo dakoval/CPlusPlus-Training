@@ -12,6 +12,10 @@
 
 class Mystring
 {
+    //Another way of doing this
+    friend bool operator== (const Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator-(const Mystring &obj);
+    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);
 private:
     char *str;
 public:
