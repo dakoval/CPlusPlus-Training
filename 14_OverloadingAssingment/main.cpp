@@ -58,7 +58,7 @@ int main(int argc, const char * argv[]) {
         cout<<"enter name for Curly"<<endl;
         cin >> curly;
         
-        cout << "Three nmess are: "<< larry<<", "<<moe<<", and "<<curly<<endl;
+        cout << "Three names are: "<< larry<<", "<<moe<<", and "<<curly<<endl;
         
         //cin >> larry >>moe>>curly;
         //cout << "Three nmess are: "<< larry<<", "<<moe<<", and "<<curly<<endl;

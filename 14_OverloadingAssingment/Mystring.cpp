@@ -111,7 +111,7 @@ void Mystring::display()const{
 }
 
 //length getter
-int Mystring::get_length() const {return std::strlen(str);}
+size_t Mystring::get_length() const {return std::strlen(str);}
 
 //string getter
 const char *Mystring::get_str()const {return str;}
