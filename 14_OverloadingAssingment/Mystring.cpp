@@ -76,12 +76,13 @@ Mystring &Mystring::operator=(Mystring &&rhs){
     return *this;
 }
 
-//Equality
+/*
+//EqualityV1
 bool Mystring::operator==(const Mystring &rhs) const {
     return (std::strcmp(str,rhs.str)==0);
 }
 
-//Make Lowercase
+//Make LowercaseV1
 Mystring Mystring::operator-()const{
     char *buff = new char[std::strlen(str)+1];
     std::strcpy(buff,str);
@@ -93,7 +94,7 @@ Mystring Mystring::operator-()const{
     return temp;
 }
 
-//Concatenate
+//ConcatenateV1
 Mystring Mystring::operator+(const Mystring &rhs) const{
     char *buff = new char[std::strlen(str)+std::strlen(rhs.str)+1];
     std::strcpy(buff,str);
@@ -102,7 +103,7 @@ Mystring Mystring::operator+(const Mystring &rhs) const{
     delete [] buff;
     return temp;
 }
-
+*/
 
 //Display Method
 void Mystring::display()const{
@@ -147,3 +148,17 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs){
 
 
 
+//Overloaded insertion operator
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs){
+    os<<rhs.str;
+    return os;
+}
+
+//Overloaded extraction operator
+std::istream &operator>>(std::istream &in, Mystring &rhs){
+    char *buff = new char[1000];
+    in>>buff;
+    rhs = Mystring{buff};
+    delete [] buff;
+    return in;
+}

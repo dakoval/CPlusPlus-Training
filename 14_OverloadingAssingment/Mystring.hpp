@@ -9,13 +9,19 @@
 #define Mystring_hpp
 
 #include <stdio.h>
+#include <iostream>
 
 class Mystring
 {
-    //Another way of doing this
-    friend bool operator== (const Mystring &lhs, const Mystring &rhs);
-    friend Mystring operator-(const Mystring &obj);
-    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);
+    //V2
+    friend bool operator== (const Mystring &lhs, const Mystring &rhs);      //equals
+    friend Mystring operator-(const Mystring &obj);                         //make lowercase
+    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);    //Concatenate
+    
+    //Overloading stream insertion
+    friend std::ostream &operator<<(std::ostream &os,const Mystring &rhs);
+    friend std::istream &operator>>(std::istream &in, Mystring &rhs);
+    
 private:
     char *str;
 public:
@@ -28,10 +34,12 @@ public:
     Mystring &operator=(const Mystring &rhs);   //Copy Assignment
     Mystring &operator=(Mystring &&rhs);        //Move Assignment
     
+    //V1
+    /*
     Mystring operator-() const;                     //make lowercase
     Mystring operator+(const Mystring &rhs)const;   //Concatenate
     bool operator==(const Mystring &rhs)const;      //equals
-    
+    */
     
     void display() const;
     

@@ -48,5 +48,22 @@ int main(int argc, const char * argv[]) {
         three_stooges.display();
     }
     
+    
+    //Overloading insertion operator
+    {
+        Mystring larry{"Larry"};
+        Mystring moe{"Moe"};
+        Mystring curly;
+        
+        cout<<"enter name for Curly"<<endl;
+        cin >> curly;
+        
+        cout << "Three nmess are: "<< larry<<", "<<moe<<", and "<<curly<<endl;
+        
+        //cin >> larry >>moe>>curly;
+        //cout << "Three nmess are: "<< larry<<", "<<moe<<", and "<<curly<<endl;
+        
+    }
+    
     return 0;
 }
