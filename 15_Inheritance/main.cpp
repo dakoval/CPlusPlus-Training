@@ -9,6 +9,8 @@
 #include "Account.hpp"
 #include "Savings_Account.hpp"
 
+using namespace std;
+
 int main(int argc, const char * argv[]) {
     Account acc{};
     acc.deposit(200.00);
@@ -31,5 +33,20 @@ int main(int argc, const char * argv[]) {
     p_sav_acc->withdraw(230);
     delete p_sav_acc;
     
+    cout<<"Account Class-----------------------"<<endl;
+    Account a1 {1000.0};
+    cout<<a1<<endl;
+    a1.deposit(500.0);
+    cout<<a1<<endl;
+    a1.withdraw(50.0);
+    cout<<a1<<endl;
+    
+    cout<<"Savings Account Class-----------------------"<<endl;
+    Savings_Account a2 {1000.0,5.0};
+    cout<<a2<<endl;
+    a2.deposit(500.0);
+    cout<<a2<<endl;
+    a2.withdraw(50.0);
+    cout<<a2<<endl;
     return 0;
 }

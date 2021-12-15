@@ -10,14 +10,19 @@
 
 #include "string"
 #include <stdio.h>
+#include <iostream>
+
 class Account
 {
-public:
+    friend std::ostream &operator<<(std::ostream &os, const Account &account);
+protected:
     double balance;
+public:
     std::string name;
     void deposit(double amount);
     void withdraw(double amount);
     Account();
+    Account(double balance);
     ~Account();
 };
 #endif /* Account_hpp */
