@@ -8,12 +8,7 @@
 #include "Account.hpp"
 #include <iostream>
 
-Account::Account()
-:balance{0.0},name{"Account"}{
-    
-}
-
-Account::Account(double balance):balance(balance){
+Account::Account(std::string name, double balance):name{name},balance(balance){
     
 }
 
@@ -21,20 +16,29 @@ Account::~Account(){
     
 }
 
-void Account::deposit(double amount){
-    balance += amount;
+bool Account::deposit(double amount){
     std::cout<<"Account Deposit called with " << amount<<std::endl;
+    if(amount<0)
+        return false;
+    else{
+        balance +=amount;
+        return true;
+    }
 }
 
-void Account::withdraw(double amount){
+bool Account::withdraw(double amount){
     std::cout<<"Account Withdraw called with " << amount<<std::endl;
-    if(balance-amount>=0)
+    if(balance-amount>=0){
         balance-=amount;
-    else
-        std::cout<<"insufficient Funds"<<std::endl;
+        return true;
+    }else
+        return false;
 }
 
+double Account::get_balance()const{
+    return balance;
+}
 std::ostream &operator<<(std::ostream &os, const Account &account){
-    os<<"Account balance: "<<account.balance;
+    os<<"[Account: "<<account.name<<":"<<account.balance<<"]";
     return os;
 }

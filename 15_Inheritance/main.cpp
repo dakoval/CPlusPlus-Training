@@ -6,47 +6,39 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "Account.hpp"
 #include "Savings_Account.hpp"
+#include "Account_Util.hpp"
+
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Account acc{};
-    acc.deposit(200.00);
-    acc.withdraw(100.00);
+    cout.precision(2);
+    cout<<fixed;
     
-    Account *p_acc {nullptr};
-    p_acc = new Account();
-    p_acc->deposit(1000.0);
-    p_acc->withdraw(230);
-    delete p_acc;
+    //Accounts
+    vector<Account> accounts;
+    accounts.push_back(Account{});
+    accounts.push_back(Account{"Larry"});
+    accounts.push_back(Account{"Moe",2000});
+    accounts.push_back(Account{"Curly",5000});
     
+    display(accounts);
+    deposit(accounts, 1000);
+    withdraw(accounts, 2000);
     
-    Savings_Account sav_acc{};
-    sav_acc.deposit(200.00);
-    sav_acc.withdraw(100.00);
+    //Savings
+    vector<Savings_Account> sav_accounts;
+    sav_accounts.push_back(Savings_Account{});
+    sav_accounts.push_back(Savings_Account{"Superman"});
+    sav_accounts.push_back(Savings_Account{"Superman", 2000});
+    sav_accounts.push_back(Savings_Account{"Wonderwoman", 5000,5.0});
     
-    Savings_Account *p_sav_acc {nullptr};
-    p_sav_acc = new Savings_Account();
-    p_sav_acc->deposit(1000.0);
-    p_sav_acc->withdraw(230);
-    delete p_sav_acc;
+    display(sav_accounts);
+    deposit(sav_accounts, 1000);
+    withdraw(sav_accounts, 2000);
     
-    cout<<"Account Class-----------------------"<<endl;
-    Account a1 {1000.0};
-    cout<<a1<<endl;
-    a1.deposit(500.0);
-    cout<<a1<<endl;
-    a1.withdraw(50.0);
-    cout<<a1<<endl;
-    
-    cout<<"Savings Account Class-----------------------"<<endl;
-    Savings_Account a2 {1000.0,5.0};
-    cout<<a2<<endl;
-    a2.deposit(500.0);
-    cout<<a2<<endl;
-    a2.withdraw(50.0);
-    cout<<a2<<endl;
     return 0;
 }
