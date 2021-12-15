@@ -52,18 +52,18 @@ int main(int argc, const char * argv[]) {
     Base b;
     cout<<b.getValue()<<endl;
     cout<<"---Base (int)------"<<endl;
-    Base bb{100}; // Overloaded Constructor
+    Base bb{100};                               // Overloaded Constructor
     cout<<bb.getValue()<<endl;
-    Base bb1{bb}; //Copy Constructor
-    bb=bb1; //Copy assignment
+    Base bb1{bb};                               //Copy Constructor
+    bb=bb1;                                     //Copy assignment
     cout<<"---Derived------"<<endl;
     Derived d;
     cout<<d.getDoubledValue()<<":"<<d.getValue()<<endl;
     cout<<"---Derived (int)------"<<endl;
-    Derived dd{100};
+    Derived dd{100};                            //Overloaded Constructor
     cout<<dd.getDoubledValue()<<":"<<dd.getValue()<<endl;
-    Derived dd1 {dd};
-    dd =dd1;
+    Derived dd1 {dd};                           //Copy Constructor
+    dd =dd1;                                    //Copy assignment
     cout<<"---Destructors------"<<endl;
     return 0;
 }
