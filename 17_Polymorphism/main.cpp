@@ -34,7 +34,7 @@ public:
 
 class Derived2: public Base2{
 public:
-    virtual void say_hello() const{
+    virtual void say_hello() const override {
         cout<<"Derived object"<<endl;
     }
 };
