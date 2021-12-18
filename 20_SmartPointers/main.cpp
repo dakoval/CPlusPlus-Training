@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <memory>
-
+#include <vector>
 using namespace std;
 
 class Base{
@@ -41,9 +41,21 @@ int main(int argc, const char * argv[]) {
     
     unique_ptr<Base> b4 = make_unique<Derived>();
     
+    cout<<"============Shared pointers"<<endl;
+    shared_ptr<Base> s1 = make_shared<Base>();
+    shared_ptr<Base> s2 = make_shared<Derived>();
+    vector<shared_ptr<Base>> vec;
+    vec.push_back(s1);
+    vec.push_back(s2);
     
+    cout<<"object has pointers: "<<s1.use_count()<<endl;// s1 and vector are pointing to it = 2
     
+    //Memory is automatical cleared, no need to use delete method
+    //unique_ptr - one one pointer for each object
+    //shared_prt - multiple things point to the same object, use_count() to see how many pointers object has
+    //
     
+    cout<<"end--------"<<endl;
     
     
     return 0;
