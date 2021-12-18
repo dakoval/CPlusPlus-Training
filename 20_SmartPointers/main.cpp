@@ -26,6 +26,11 @@ public:
     }
 };
 
+void my_delete(Base *ptr){
+    cout<<"using my custom deleter"<<endl;
+    delete ptr;
+}
+
 
 int main(int argc, const char * argv[]) {
 
@@ -50,10 +55,16 @@ int main(int argc, const char * argv[]) {
     
     cout<<"object has pointers: "<<s1.use_count()<<endl;// s1 and vector are pointing to it = 2
     
+    
+    shared_ptr<Base> ptr {new Base(), my_delete}; //using a custom deleter
+    
     //Memory is automatical cleared, no need to use delete method
     //unique_ptr - one one pointer for each object
-    //shared_prt - multiple things point to the same object, use_count() to see how many pointers object has
-    //
+    //shared_ptr - multiple things point to the same object, use_count() to see how many pointers object has
+    //weak_ptr - used for a temp pointer
+        // if 2 shared pointers point to each and one goes out of scope - memory leak, better to use a weak pointer for one of them.
+        
+    
     
     cout<<"end--------"<<endl;
     
