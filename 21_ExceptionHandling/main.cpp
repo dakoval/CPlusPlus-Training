@@ -6,16 +6,27 @@
 //
 
 #include <iostream>
+using namespace std;
+
+double calc(int a, int b){
+    if(a==0)
+      throw 0;
+    if(b==0)
+        throw "abc";
+    return static_cast<double>(a)/b;
+};
+
 
 int main(int argc, const char * argv[]) {
+
     try{
-        if(false){
-            throw 0;
-        }
-    }catch(){
+        calc(1,2);
+    }catch(int &ex){ //if int error.
+        
+    }catch(string &ex){//if string error
+        
+    }catch(...){ //catch all
         
     }
-    // insert code here...
-    std::cout << "Hello, World!\n";
     return 0;
 }
