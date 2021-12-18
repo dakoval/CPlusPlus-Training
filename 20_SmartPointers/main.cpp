@@ -57,6 +57,10 @@ int main(int argc, const char * argv[]) {
     
     
     shared_ptr<Base> ptr {new Base(), my_delete}; //using a custom deleter
+    shared_ptr<Base> ptr2 {new Base(),[](Base *ptr){
+        cout<<"Lambda custom deleter"<<endl;
+        delete ptr;
+    }};
     
     //Memory is automatical cleared, no need to use delete method
     //unique_ptr - one one pointer for each object
